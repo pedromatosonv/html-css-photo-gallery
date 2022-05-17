@@ -1,0 +1,29 @@
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+}
+
+img {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "a b b"
+            "c b b"
+            "d e f"
+    }
+
+    img:nth-of-type(2) {
+        grid-area: b;
+    }
+}
